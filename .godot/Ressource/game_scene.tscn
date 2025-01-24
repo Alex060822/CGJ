@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://6ih4k5x3ws6p"]
+
+[ext_resource type="Script" path="res://game_scene.gd" id="1_51l1n"]
+[ext_resource type="PackedScene" uid="uid://dgw71o4r6sjed" path="res://player.tscn" id="1_oklyb"]
+[ext_resource type="PackedScene" uid="uid://djrdr3f7ihu5g" path="res://note.tscn" id="2_d62ej"]
+[ext_resource type="Texture2D" uid="uid://cn5abarcypfgh" path="res://Sprite/Design_sans_titre.png" id="2_k43lq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sgqe7"]
+distance = -80.0
+
+[node name="Game_Scene" type="Node2D"]
+script = ExtResource("1_51l1n")
+
+[node name="DesignSansTitre" type="Sprite2D" parent="."]
+position = Vector2(-9.09495e-13, 6)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_k43lq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("1_oklyb")]
+position = Vector2(-49, 71)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_sgqe7")
+
+[node name="Note" parent="." instance=ExtResource("2_d62ej")]
+visible = false
+position = Vector2(-188, 13)

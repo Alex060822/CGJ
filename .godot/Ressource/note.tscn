@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://djrdr3f7ihu5g"]
+
+[ext_resource type="Script" path="res://note.gd" id="1_7hhp0"]
+[ext_resource type="Texture2D" uid="uid://beep7oxvxt2if" path="res://sprites/platforms.png" id="1_kloko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfi7x"]
+size = Vector2(32, 8)
+
+[node name="Note" type="AnimatableBody2D"]
+light_mask = 3
+visibility_layer = 2
+script = ExtResource("1_7hhp0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("1_kloko")
+region_enabled = true
+region_rect = Rect2(16.107, 0, 32.0259, 8.83723)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_kfi7x")
+one_way_collision = true
