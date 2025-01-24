@@ -12,7 +12,7 @@ distance = -80.0
 script = ExtResource("1_51l1n")
 
 [node name="DesignSansTitre" type="Sprite2D" parent="."]
-position = Vector2(-9.09495e-13, 6)
+position = Vector2(-1.29247e-26, -6)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_k43lq")
 
@@ -30,3 +30,6 @@ shape = SubResource("WorldBoundaryShape2D_sgqe7")
 [node name="Note" parent="." instance=ExtResource("2_d62ej")]
 visible = false
 position = Vector2(-188, 13)
+
+[node name="Note2" parent="." instance=ExtResource("2_d62ej")]
+position = Vector2(-202, -18)
